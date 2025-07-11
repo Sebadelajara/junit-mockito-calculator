@@ -1,9 +1,9 @@
 package com.ejemplo;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 /**
  * Pruebas de integración para DescuentoRepository
@@ -11,7 +11,12 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Pruebas del repositorio de descuentos")
 class DescuentoRepositoryTest {
 
-    private final DescuentoRepository repository = new DescuentoRepository();
+    private DescuentoRepository repository;
+
+    @BeforeEach
+    void setUp() {
+        repository = new DescuentoRepository();
+    }
 
     @Test
     @DisplayName("Obtener descuento PROMO10")
